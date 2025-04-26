@@ -23,7 +23,7 @@ export default function Home() {
 
             <div className="py-10 flex flex-col items-center text-center w-full">
               <h2 className="text-3xl font-bold text-[#00ffff] mb-2">
-                Sign in to your account
+                Sign in
               </h2>
               <div className="border-2 w-10 border-[#ff00cc] inline-block mb-4 rounded"></div>
 
@@ -70,6 +70,15 @@ export default function Home() {
                   className="border-2 border-[#00ffff] text-[#00ffff] rounded-full px-12 py-2 inline-block font-semibold hover:bg-[#00ffff] hover:text-[#0f0c29] transition-all duration-300 shadow-[0_0_15px_#00ffff90]"
                 >
                   Sign in
+                </a>
+
+                <p className="mt-4 text-[#cccccc] text-sm"> Or </p>
+
+                <a
+                  href="#"
+                  className="border-2 border-[#ff00cc] text-[#ff00cc] rounded-full px-12 py-2 inline-block font-semibold hover:bg-[#ff00ff] hover:text-[#0f0c29] transition-all duration-300 shadow-[0_0_15px_#ff00cc90] mt-4"
+                >
+                  Create account
                 </a>
               </div>
             </div>
