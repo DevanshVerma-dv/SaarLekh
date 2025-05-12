@@ -1,0 +1,89 @@
+.frame-fullpage {
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  border: 3px solid #4B187B;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.frame-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 1.25rem;
+  font-family: Arial, sans-serif;
+  padding: 12px 20px 0 12px;
+  box-sizing: border-box;
+}
+
+.frame-logo {
+  font-weight: normal;
+  color: #000;
+  letter-spacing: 0.15rem;
+}
+
+.frame-logout {
+  background: none;
+  border: none;
+  color: #000;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: normal;
+  padding: 0;
+  margin-top: 2px;
+}
+
+.frame-main {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.frame-actions {
+  display: flex;
+  gap: 48px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.frame-action {
+  width: 220px;
+  height: 220px;
+  background: #fff;
+  border: 2px solid #222;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #000;
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+  text-align: center;
+  cursor: pointer;
+  transition: box-shadow 0.12s, border-color 0.12s, transform 0.10s;
+  user-select: none;
+  box-shadow: none;
+}
+
+.frame-action:hover {
+  border-color: #4B187B;
+  background: #f7f2fb;
+  transform: scale(1.01);
+}
+
+@media (max-width: 700px) {
+  .frame-actions { flex-direction: column; gap: 24px; }
+  .frame-action { width: 80vw; max-width: 260px; height: 90px; font-size: 1.1rem; }
+}
