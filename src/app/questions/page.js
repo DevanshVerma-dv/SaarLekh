@@ -1,8 +1,6 @@
 "use client";
-import { useRouter } from "next/navigation";
 
 export default function QuestionsPage() {
-  const router = useRouter();
 
   const questions = [
     "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -12,9 +10,6 @@ export default function QuestionsPage() {
     "lorem ipsum dolor sit amet, consectetur adipiscing elit?",
   ]; // Example questions, replace with dynamic data if needed
 
-  function handleBackToSummary() {
-    router.push("/summary"); // Navigate back to the summary page
-  }
 
   return (
     <div className="frame-fullpage">

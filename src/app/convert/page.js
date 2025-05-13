@@ -1,10 +1,7 @@
 // filepath: /home/dave/Documents/SaarLekh/src/app/convert/page.js
 "use client";
 
-import { useRouter } from "next/navigation";
-
 export default function ConvertPage() {
-  const router = useRouter();
 
   const convertedText = `
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -13,9 +10,6 @@ export default function ConvertPage() {
     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
   `; // Example text, replace with dynamic data if needed
 
-  function handleBackToDashboard() {
-    router.push("/"); // Navigate back to the dashboard
-  }
 
   return (
     <div className="frame-fullpage">

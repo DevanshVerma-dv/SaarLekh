@@ -1,6 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
+AI-Project/frontend/saarlekh/node_modules/
+node_modules/
 /node_modules
 /.pnp
 .pnp.*
@@ -15,6 +17,8 @@
 
 # next.js
 /.next/
+.next/
+.next/server/chunks/
 /out/
 
 # production
@@ -39,3 +43,4 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+node_modules/
