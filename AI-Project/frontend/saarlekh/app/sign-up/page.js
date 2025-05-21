@@ -120,8 +120,7 @@ export default function SignUp() {
 
               {!!error && (
                 <div
-                  className="flex items-center w-64 bg-red-600 text-white text-sm px-4 py-2 rounded-xl mb-4 space-x-2 shadow-[0_0_5px_rgba(255,0,0,0.5)]
-    "
+                  className="flex items-center w-64 bg-red-600 text-white text-sm px-4 py-2 rounded-xl mb-4 space-x-2 shadow-[0_0_5px_rgba(255,0,0,0.5)]"
                 >
                   <TriangleAlert className="flex-shrink-0" size={18} />
                   <span className="break-words">{error}</span>
