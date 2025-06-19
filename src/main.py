@@ -1,11 +1,9 @@
 import re
 from transformers import T5Tokenizer, T5ForConditionalGeneration
 
-# Sentence splitter without NLTK
 def split_sentences(text):
     return re.split(r'(?<=[.!?])\s+', text.strip())
 
-# Load the model and tokenizer
 model_name = "valhalla/t5-base-qg-hl"
 tokenizer = T5Tokenizer.from_pretrained(model_name)
 model = T5ForConditionalGeneration.from_pretrained(model_name)
@@ -26,7 +24,6 @@ def generate_questions(passage):
 
     return questions
 
-# Example usage
 if __name__ == "__main__":
     passage = "Mr. Smith bought cheapsite.com for 1.5 million dollars, i.e. he paid a lot for it. Did he mind? Adam Jones Jr. thinks he didn't. In any case, this isn't true... Well, with a probability of .9 it isn't."
     questions = generate_questions(passage)

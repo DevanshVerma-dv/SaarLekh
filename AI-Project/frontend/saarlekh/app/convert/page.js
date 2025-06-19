@@ -1,15 +1,34 @@
 // filepath: /home/dave/Documents/SaarLekh/src/app/convert/page.js
 "use client";
 
+import { useState } from "react";
+
 export default function ConvertPage() {
+  const [convertedText, setConvertedText] = useState("");
+  const [file, setFile] = useState(null);
 
-  const convertedText = `
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-  `; // Example text, replace with dynamic data if needed
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
+  };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!file) return;
+    const formData = new FormData();
+    formData.append("file", file);
+
+    try {
+      const res = await fetch("http://127.0.0.1:8000/image-to-text", {
+        method: "POST",
+        body: formData,
+      });
+      if (!res.ok) throw new Error("API error");
+      const data = await res.json();
+      setConvertedText(data.text);
+    } catch (err) {
+      setConvertedText("Error: Could not convert image.");
+    }
+  };
 
   return (
     <div className="frame-fullpage">
@@ -28,6 +47,10 @@ export default function ConvertPage() {
       <main className="frame-main">
         <div className="convert-container">
           <h1 className="convert-title">Converted Text</h1>
+          <form onSubmit={handleSubmit}>
+            <input type="file" accept="image/*" onChange={handleFileChange} />
+            <button type="submit">Convert Image</button>
+          </form>
           <div className="convert-box">
             <p className="converted-text">{convertedText}</p>
           </div>
