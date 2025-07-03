@@ -24,6 +24,12 @@
   z-index: 10;
 }
 
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .frame-logo {
   font-size: 2rem;
   font-weight: bold;
